@@ -45,7 +45,7 @@
 
      sqrt()  ---> Raiz Quadrada de um numero ------- raiz = math.sqrt(numero)
      floor() ---> Arredonda o numero para baixo ---- 5,23 fica 5,00
-     ceil() -----> Retorna um valor inteiro ---------------- 5,23 fica 5
+     ceil() -----> arredonda pra cima ---------------- 5,23 fica 5
      hypot() ---> Retorna a hipotenusa dos catetos - math.hypot(co, ca)
      pow() ----> Potencia de um numero ---------------- pow(2, 3) = 2³ = 8
      radians()-> Converte em graus radianos ---------- print(math.radians(180))
@@ -88,7 +88,7 @@
   strip() -----------> Tira o espaço do começo e no fim da frase  ----------------- frase.strip()  frase.lstrip()  frase.rstrip()
   split() -----------> Vai ocorrer uma divisão entre os espaços da frase ----- frase.split() vai criar uma lista com as frases separadas recomeçando o indice palavra por
   palavra
-  .join() -----------> Juntar uma coisa com a outra -------------------------------------- '-'.join.frase Estou-aprendendo-a-programar-em-python
+  .join() -----------> Juntar uma coisa com a outra -------------------------------------- '-'.join.(frase) Estou-aprendendo-a-programar-em-python
    "in" informa se é algo é true ou false (ex: 'existe' in dentro_da_variavel  ?)
    variavel.index(x)- procura em que posição esta o numero indicado para tuplas.
    max(variavel)-retorna o maior valor da tupla
@@ -130,4 +130,6 @@ for variável in sequência:
      -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
 
      break - serve pra interromper uma estrutura de repetição
+     
+
      
