@@ -75,8 +75,8 @@
   frase = 'ESTOU APRENDENDO A PROGRAMAR EM PYHTON'
 
   frase[9] ------> Pega os caracteres das posições indicadas ------------------- letra E
-  frase[9:13] -> Pega os caracteres das posições indicadas ------------------- ENDE
-  frase[9:18:2]--> Pega os caracteres das posições indicadas pulando 2 - EDNOA
+  frase[9:13] -> Pega os caracteres das posições indicadas ------------------- ENDO
+  frase[9:18:2]--> Pega os caracteres das posições indicadas pulando 2 - ENDO A PR
   len() -------------> Mostra quantos caracters tem a frase -------------------------------- len(frase) = 38 caracters
   count() ---------> Conta quantas vezes aparece a letra escolhida ----------- frase.count('s')
   find() ------------> Procura a partir de qual posição dos caracteres escolhidos esta a frase ---------------------------------- frase.find('aprendendo')*obs-nesse caso a partir da posição 6
@@ -95,6 +95,12 @@
    min(variavel)-retorna o menor valor da tupla
 
 -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+if condição1: # executa se condicao1 for verdadeira | independente de outros if
+
+elif condição2: #executa se condicao2 for verdadeira e outras condições for falsa
+ou seja, é dependente, so vai executar nessa situação
+
+else: # executa se nenhuma das anteriores for verdadeira
 
 for variável in sequência:
     # Bloco de código a ser executado para cada elemento na sequência
@@ -104,23 +110,41 @@ for variável in sequência:
     while condição:
     # Bloco de código a ser executado enquanto a condição for verdadeira
 
+    break - é usado dentro de loops (for ou while) para interrompelos
+
     -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
-    mudar as cores no phyton- \033[style;text;backm
-    style=0 para sem style,1 para negrito,4 para underline,7 para negative
-    text=30 ao 37
-    back=40 ao 47
-    ex: \033[1;31;40m
-     text                    background
- 
-      30      black        preto      40
-      31      red          vermelho   41
-      32      green        verde      42
-      33      yellow       amarelo    43
-      34      blue         azul       44
-      35      Magenta      Magenta    45
-      36      cyan         ciano      46
-      37      grey         cinza      47
-      97      white        branco     107
+    Estrutura de um código ANSI:
+    \033[<estilo>;<cor>m
+    \033[ é o caractere de escape.
+    <estilo> é o estilo do texto (como negrito, sublinhado, etc).
+    <cor> é o código da cor do texto (ou plano de fundo).
+      m finaliza o código ANSI.
+      
+      EX: print("\033[3;31;47m HELLO WORLD\033[0m")
+      
+      Códigos de cor ANSI (básicos):
+      
+      Cor	    Texto	    Fundo
+      Preto	    30	     40
+      Vermelho	31	     41
+      Verde	    32	     42
+      Amarelo	  33	     43
+      Azul	    34	     44
+      Magenta	  35	     45
+      Ciano	    36	     46
+      Branco	  37	     47
+
+      Estilos disponíveis:
+
+      Estilo	            Código
+      Normal	              0
+      Negrito (bold)	      1
+      Substituído (dim)	    2
+      Itálico	              3
+      Sublinhado	          4
+      Piscando	            5
+      Invertido	            7
+      Oculto	              8
     -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
      import datetime
      from datetime import date
@@ -128,8 +152,5 @@ for variável in sequência:
      variavel=date.today().year *isso escolhe o ano atual
 
      -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
-
-     break - serve pra interromper uma estrutura de repetição
-     
 
      
