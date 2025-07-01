@@ -1,5 +1,5 @@
 # O bom e velho IMC (Índice de Massa Corporal)
-# Utilize a referencia metros para altura Ex: 1.75 
+# Utilize a referencia em metros para altura Ex: 1.75 
 
 peso=float(input("Qual é seu peso? (Kg) "))
 altura=float(input("Qual é sua altura? (M) "))
