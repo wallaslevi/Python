@@ -150,7 +150,8 @@ for variável in sequência:
      from datetime import date
      variavel=datetime.escolhe a função ou
      variavel=date.today().year *isso escolhe o ano atual
-
+      import time
+      from time import sleep
      -~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
 
      
