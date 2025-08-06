@@ -13,9 +13,18 @@
   variavel.isspace() / variavel.isnumeric() / variavel.isalpha() / variavel.isalnum()
   comando ''is'' serve para verificar se a variavel tem espaço, se é numerica, se é numero e letra, se é só letra entre outros.
 
-  Listas (list)> []
+  Listas (list)> [] ou variavel=list() * é possivel adicionar mais elementos a listas com comando variavel.append('novo elemento') e sera adicionado ao final da lista como mais um elemento dela. ou variavel.insert(0,'elemento') e sera adicionado novo elemento na posição 0 realocando ou antigos mais pra frente.
+  del variavel [3] elimina o item da lista na posição 3.
+  variavel.pop(3) elimina o item da lista na posição 3.
+  variavel.remove('elemento') tambem elimina pelo conteudo.
+  variavel.sort()- organiza em ordem crescente. muda a lista
+  variavel.sort(reverse=True)- organiza de forma decrescente
+  a=[1,2,3] | b=a | -essa forma liga uma lista a outra, de forma que se alterar um altera ambas. a melhor forma de copiar um lista é b=a[:] | ou b=list(a) | ou b=a.copy() | ou copia profunda * import copy --- b=copy.deepcopy(a)
   tuple(): A diferença para Lista é que Tuplas são imutáveis, ou seja, após sua definição, Tuplas não podem ser modificadas.
-  sorted(variavel)- faz com que seja mostrado em ordem
+  sorted(variavel)- faz com que seja mostrado em ordem mas contunia a tupla imutavel
+  variavel.count(x)-mostra quantas vezes aparece x na variavel
+  variavel.index(x)-mostra em que posição esta o x
+  del(nomedatupla)-apaga toda a tupla (nao é possivel apagar elementos)
  
 -~-~-~-~-~-~-~- Operadores Aritméticos ~-~-~-~-~-~-~-
 
@@ -98,7 +107,7 @@
 if condição1: # executa se condicao1 for verdadeira | independente de outros if
 
 elif condição2: #executa se condicao2 for verdadeira e outras condições for falsa
-ou seja, é dependente, so vai executar nessa situação
+ou seja, é dependente, so vai executar nessa situação. e esta associado ao if anterior e nao a todos os if's.
 
 else: # executa se nenhuma das anteriores for verdadeira
 
@@ -106,6 +115,8 @@ for variável in sequência:
     # Bloco de código a ser executado para cada elemento na sequência
     for i in range(1, 6):
     print(i) #percorre de 1 a 5
+    for pos, i in enumerate(variavel):
+      print(f'{pos-vai mostras a posição},{i-vai mostrar o element da variavel}')
 
     while condição:
     # Bloco de código a ser executado enquanto a condição for verdadeira
