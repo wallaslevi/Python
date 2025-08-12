@@ -1,0 +1,106 @@
+instalando biblioteca pandas- pip install pandas
+
+df- dataframe/base de dados
+pd- se refere a biblioteca pandas
+pd.read - ler 
+df= pd.read_csv - vai ler a base de dados "df" do arquivo "csv"
+
+df = pd.read_csv("https://raw.githubusercontent.com/guilhermeonrails/data-jobs/refs/heads/main/salaries.csv")
+
+df.head() - vai imprimir/exibir as 5 primeiras linhas do seu "df", caso deseje selecionar quantas linhas em especifico é só colocar o valor desejado df.head(x)
+
+df.info() - imprime o resumo de uma base de dados e ao contrario do df.head() nao retorna um objeto, mas sim informações da estrutura da sua base de dados. Como o tipo de variavel, valores nao nulos uso de memoria alocado, numero de linhas e colunas...obs: nao precisa do print
+
+df.describe() - gera estatistica descritiva para as colunas numericas da base de dados.
+
+df.describe(include="object")- ao contratio da estatistica descritiva ele mostra: count: O número total de valores não nulos na coluna.
+unique: O número de valores únicos (distintos) na coluna.
+top: O valor mais frequente na coluna.
+freq: A frequência do valor mais frequente (top).
+
+df.shape- é um atributo, nao um metodo ou função. retorna uma tupla contendo as dimensões da sua base de dados. como numero de linhas e colunas.
+
+df.columns- permite ver e manipular os nomes das colunas da sua base de dados
+retorna um objeto do tipo Index contendo os nomes de todas as colunas do seu DataFrame.
+
+df.rename- é utilizada para renomear colunas ou índices em um DataFrame do pandas.
+df.rename(columns={'nome_antigo': 'novo_nome'})
+df=df.rename(columns=variavel)
+
+*acessar uma coluna especifica e entender a distribuição dos dados em uma coluna, mostrando quais valores são mais comuns e quais são raros*
+df["nome_da_coluna"].value_counts()
+
+df.isnull()True: Indica que o valor correspondente no DataFrame original é nulo, ausente ou "Not a Number" (NaN). False: Indica que o valor é válido e não está ausente.- permite que você visualize a localização exata de todos os valores nulos antes de decidir como tratá-los 
+
+df.isnull().sum()- O resultado final é uma série que mostra, para cada coluna, quantos valores nulos ela contém
+
+df['senioridade'] = df['senioridade'].replace(senioridade)-Substitui valores da coluna 'senioridade' pelo mapeamento dado.
+
+df['contrato'] = df['contrato'].replace(contrato)-Substitui valores da coluna 'contrato' pelo mapeamento dado.
+
+df['tamanho_empresa'] = df['tamanho_empresa'].replace(tamanho_empresa)-Substitui valores da coluna 'tamanho_empresa' pelo mapeamento dado.
+
+df['remoto'] = df['remoto'].replace(mapa_trabalho)-Mapeia valores numéricos para categorias descritivas na coluna 'remoto'
+
+print(df.describe(include="object"))-Exibe estatísticas das colunas com dados categóricos (texto).
+
+print(df.isnull())-Indica True/False onde há valores nulos no DataFrame
+
+print(df.isnull().sum())-Conta quantos valores nulos existem em cada coluna.
+
+print(df["ano"].unique())-Retorna os valores únicos da coluna 'ano'.
+
+print(df[df.isnull().any(axis=1)])-Filtra e mostra linhas que possuem ao menos um valor nulo.
+
+df_limpo = df.dropna()-Cria uma nova tabela sem as linhas que contém valores nulos.
+
+print(df_limpo.isnull().sum())-Confirma que não existem mais valores nulos na nova tabela.
+
+df_limpo['senioridade'].value_counts().plot(kind='bar', title="Distribuição de senioridade I")-Cria um gráfico de barras da frequência dos níveis de senioridade.
+
+plt.show()-Exibe o gráfico gerado
+
+sns.barplot(data=df_limpo, x='senioridade', y='usd')-Gera gráfico de barras com média salarial por senioridade usando Seaborn.
+
+plt.figure(figsize=(8,5))-Define o tamanho da figura do gráfico em polegadas (largura x altura).
+
+plt.title("Salário médio por senioridade III")-Adiciona título ao gráfico
+
+plt.xlabel("Senioridade")
+Define o nome do eixo X.
+
+plt.ylabel("Salário médio anual (USD)")
+Define o nome do eixo Y.
+
+df_limpo.groupby('senioridade')['usd'].mean().sort_values(ascending=True)
+Agrupa por senioridade, calcula média salarial e ordena do menor para o maior.
+
+ordem = df_limpo.groupby('senioridade')['usd'].mean().sort_values(ascending=True).index
+Cria uma ordem das categorias de senioridade baseada na média salarial.
+
+sns.histplot(df_limpo['usd'], bins=50, kde=True)
+Cria histograma do salário com 50 barras e curva de densidade (kde).
+
+sns.boxplot(x=df_limpo['usd'])
+Gera boxplot para visualizar distribuição e outliers dos salários.
+
+sns.boxplot(x='senioridade', y='usd', data=df_limpo, order=ordem_senioridade)
+Cria boxplots de salários por senioridade na ordem definida.
+
+sns.boxplot(x='senioridade', y='usd', data=df_limpo, order=ordem_senioridade, palette='Set2', hue='senioridade')
+Adiciona cores e separa por senioridade nos boxplots.
+
+fig = px.bar(senioridade_media_salario, x='senioridade', y='usd', title='Média Salarial por Senioridade IX', labels={'senioridade': 'Nível de Senioridade', 'usd': 'Média Salarial Anual (USD)'})
+Cria gráfico de barras interativo com Plotly mostrando média salarial por senioridade.
+
+fig.show()
+Exibe o gráfico interativo.
+
+fig = px.pie(remoto_contagem, names='tipo_trabalho', values='quantidade', title='Proporção dos tipos de trabalho X')
+Cria gráfico de pizza com proporção dos tipos de trabalho.
+
+fig = px.pie(remoto_contagem, names='tipo_trabalho', values='quantidade', title='Proporção dos tipos de trabalho XI', hole=0.5)
+Cria gráfico de pizza no formato “rosquinha” com um furo central.
+
+fig.update_traces(textinfo='percent+label')
+Adiciona percentuais e rótulos nos pedaços do gráfico de pizza.
